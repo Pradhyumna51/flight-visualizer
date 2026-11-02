@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Multi-Leg Flight (Outbound and Inbound)</name>
+    <description>Two legs: Leg 1 SFO to LAX, Leg 2 LAX to SFO.</description>
+    <Placemark>
+      <name>Leg 1: SFO to LAX</name>
+      <LineString>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          -122.375,37.619,10
+          -122.200,37.500,1500
+          -121.800,37.000,5500
+          -121.200,36.400,9800
+          -120.400,35.600,10500
+          -119.600,34.900,9000
+          -118.800,34.300,5000
+          -118.408,33.942,40
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Leg 2: LAX to SFO Return</name>
+      <LineString>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          -118.408,33.942,40
+          -118.700,34.200,2000
+          -119.500,34.800,6000
+          -120.200,35.500,10000
+          -121.000,36.300,10500
+          -121.700,37.100,7000
+          -122.200,37.500,2500
+          -122.375,37.619,10
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>Flight LHR-CDG (gx:Track with Timestamps)</name>
+    <description>Flight from London Heathrow (EGLL) to Paris Charles de Gaulle (LFPG) with recorded timestamps.</description>
+    <Placemark>
+      <name>British Airways Shuttle LHR-CDG</name>
+      <gx:Track>
+        <altitudeMode>absolute</altitudeMode>
+        <when>2026-06-01T10:00:00Z</when>
+        <when>2026-06-01T10:05:00Z</when>
+        <when>2026-06-01T10:10:00Z</when>
+        <when>2026-06-01T10:15:00Z</when>
+        <when>2026-06-01T10:20:00Z</when>
+        <when>2026-06-01T10:25:00Z</when>
+        <when>2026-06-01T10:30:00Z</when>
+        <when>2026-06-01T10:35:00Z</when>
+        <when>2026-06-01T10:40:00Z</when>
+        <when>2026-06-01T10:45:00Z</when>
+        <when>2026-06-01T10:50:00Z</when>
+        <when>2026-06-01T10:55:00Z</when>
+        <when>2026-06-01T11:00:00Z</when>
+        <!-- Coordinates: lon lat alt -->
+        <gx:coord>-0.454 51.470 25</gx:coord>
+        <gx:coord>-0.320 51.410 850</gx:coord>
+        <gx:coord>-0.100 51.320 2200</gx:coord>
+        <gx:coord>0.200 51.200 4500</gx:coord>
+        <gx:coord>0.600 51.050 6800</gx:coord>
+        <gx:coord>1.050 50.900 7600</gx:coord>
+        <gx:coord>1.500 50.700 7600</gx:coord>
+        <gx:coord>1.900 50.350 7600</gx:coord>
+        <gx:coord>2.150 49.950 6200</gx:coord>
+        <gx:coord>2.300 49.550 4100</gx:coord>
+        <gx:coord>2.420 49.250 2100</gx:coord>
+        <gx:coord>2.500 49.050 800</gx:coord>
+        <gx:coord>2.550 49.009 119</gx:coord>
+      </gx:Track>
+    </Placemark>
+  </Document>
+</kml>
+

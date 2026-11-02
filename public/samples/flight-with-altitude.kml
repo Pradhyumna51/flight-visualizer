@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <name>Flight SFO-LAS Scenic (Climb, Cruise, Descent)</name>
+    <description>Commercial airline flight from San Francisco (KSFO) to Las Vegas (KLAS) demonstrating distinct climb, cruise, and descent altitude profiles over the Sierra Nevada.</description>
+    <Placemark>
+      <name>SFO to LAS Flight Path</name>
+      <LineString>
+        <extrude>1</extrude>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          -122.375,37.619,5
+          -122.340,37.635,300
+          -122.250,37.660,1100
+          -122.100,37.700,2400
+          -121.900,37.750,4200
+          -121.650,37.800,6100
+          -121.300,37.850,7800
+          -120.900,37.900,9200
+          -120.400,37.930,10200
+          -119.800,37.950,10400
+          -119.200,37.930,10400
+          -118.600,37.870,10400
+          -118.000,37.770,10400
+          -117.400,37.620,10400
+          -116.900,37.400,9800
+          -116.400,37.100,8200
+          -116.000,36.800,6400
+          -115.700,36.500,4500
+          -115.450,36.300,2800
+          -115.300,36.180,1600
+          -115.220,36.120,950
+          -115.170,36.090,700
+          -115.152,36.084,660
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Flight Tokyo to Osaka (No Altitude / ClampToGround)</name>
+    <description>Domestic route Haneda (RJTT) to Itami (RJOO) without altitude recordings (altitude 0 / clampToGround).</description>
+    <Placemark>
+      <name>RJTT-RJOO Ground Track</name>
+      <LineString>
+        <altitudeMode>clampToGround</altitudeMode>
+        <coordinates>
+          139.781,35.553,0
+          139.650,35.450,0
+          139.300,35.300,0
+          138.800,35.150,0
+          138.300,35.000,0
+          137.800,34.850,0
+          137.200,34.750,0
+          136.600,34.700,0
+          136.000,34.680,0
+          135.600,34.720,0
+          135.438,34.785,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Transatlantic JFK to LHR (Great Circle Long Haul)</name>
+    <description>Long-distance intercontinental flight path from New York JFK to London Heathrow crossing the North Atlantic Ocean at FL370-FL390.</description>
+    <Placemark>
+      <name>JFK-LHR Oceanic Route</name>
+      <LineString>
+        <altitudeMode>absolute</altitudeMode>
+        <coordinates>
+          -73.778,40.641,4
+          -73.650,40.750,900
+          -73.400,41.000,2400
+          -72.800,41.400,4800
+          -71.800,42.000,7500
+          -70.500,42.700,9800
+          -68.800,43.500,11300
+          -66.500,44.400,11300
+          -63.500,45.400,11300
+          -60.000,46.500,11300
+          -56.000,47.800,11600
+          -52.000,49.200,11600
+          -47.000,50.800,11600
+          -41.000,52.400,11900
+          -34.000,53.800,11900
+          -27.000,54.700,11900
+          -20.000,55.100,11900
+          -14.000,54.800,11900
+          -9.000,53.900,11900
+          -5.500,53.000,11300
+          -3.000,52.200,8500
+          -1.500,51.800,5200
+          -0.800,51.600,2600
+          -0.550,51.510,950
+          -0.454,51.470,25
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>
+
