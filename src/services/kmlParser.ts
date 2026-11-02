@@ -137,7 +137,55 @@ export function parseKML(
     }
   });
 
-  if (rawTracks.length === 0) {
+  // 3. Check for Folders or Documents containing sequential Point Placemarks (e.g. Flightradar24, GPS loggers)
+  const folderElements = Array.from(xmlDoc.getElementsByTagName('Folder'));
+  folderElements.forEach((folderEl, fIndex) => {
+    const folderName =
+      folderEl.getElementsByTagName('name')[0]?.textContent?.trim() || `Route Folder ${fIndex + 1}`;
+    const placemarkEls = Array.from(folderEl.getElementsByTagName('Placemark'));
+    const coords: Array<{ lon: number; lat: number; alt: number; time?: string }> = [];
+
+    placemarkEls.forEach((pm) => {
+      const pointEl = pm.getElementsByTagName('Point')[0];
+      if (!pointEl) return;
+      const coordEl = pointEl.getElementsByTagName('coordinates')[0];
+      const whenEl = pm.getElementsByTagName('when')[0];
+
+      if (coordEl?.textContent) {
+        const parts = coordEl.textContent.trim().split(',').map((p) => p.trim()).map(Number);
+        if (parts.length >= 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+          coords.push({
+            lon: parts[0],
+            lat: parts[1],
+            alt: parts.length > 2 && !isNaN(parts[2]) ? parts[2] : 0,
+            time: whenEl?.textContent?.trim() || undefined,
+          });
+        }
+      }
+    });
+
+    if (coords.length >= 2) {
+      const docName =
+        xmlDoc.getElementsByTagName('Document')[0]?.getElementsByTagName('name')[0]?.textContent?.trim();
+      const trackName = docName ? `${docName} (${folderName})` : folderName;
+
+      rawTracks.push({
+        id: `folder-points-${fIndex}-${Date.now()}`,
+        name: trackName,
+        description: `Sequential waypoints track from ${folderName} (${coords.length} points)`,
+        altitudeMode: 'absolute',
+        coords,
+      });
+    }
+  });
+
+  // Filter out tiny 2-point fragments if full multi-point routes (>= 5 points) exist
+  const hasLongRoutes = rawTracks.some((t) => t.coords.length >= 5);
+  const filteredTracks = hasLongRoutes
+    ? rawTracks.filter((t) => t.coords.length >= 5)
+    : rawTracks;
+
+  if (filteredTracks.length === 0) {
     throw new Error(
       'No valid flight routes found in KML. The file must contain at least two sequential coordinates in a <LineString> or <gx:Track>.'
     );
@@ -146,7 +194,7 @@ export function parseKML(
   // Convert raw tracks to standardized FlightRoute objects
   const defaultSpeedMps = knotsToMps(options?.defaultSpeedKnots || 450);
 
-  return rawTracks.map((raw) => processRawTrack(raw, defaultSpeedMps));
+  return filteredTracks.map((raw) => processRawTrack(raw, defaultSpeedMps));
 }
 
 function parseAltitudeMode(modeStr?: string | null): AltitudeMode {
